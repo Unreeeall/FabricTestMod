@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "testmod:item/chocolate_whey_protein_powder"
-  }
-}
