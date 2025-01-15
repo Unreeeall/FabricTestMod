@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "testmod:item/watermelon_iso_clear_powder"
+  }
+}

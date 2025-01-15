@@ -1,0 +1,33 @@
+{
+  "block.testmod.block_of_quargermark": "Block of Quargermark",
+  "block.testmod.pink_garnet_deepslate_ore": "Pink Garnet Deepslate Ore",
+  "block.testmod.pink_garnet_ore": "Pink Garnet Ore",
+  "block.testmod.protein_powder_block": "Block of Protein powder",
+  "block.testmod.pink_garnet_block": "Block of Pink Garnet",
+  "block.testmod.raw_pink_garnet_block": "Block of Raw Pink Garnet",
+  "block.testmod.magic_block": "Magic Block",
+
+  "item.testmod.apple_iso_clear_powder": "Apple ISO Clear Powder",
+  "item.testmod.chocolate_whey_protein_powder": "Chocolate Whey Protein Powder",
+  "item.testmod.iso_clear_powder": "ISO Clear Powder",
+  "item.testmod.plain_whey_protein_powder": "Plain Whey Protein Powder",
+  "item.testmod.quargermark": "Quargermark",
+  "item.testmod.watermelon_iso_clear_powder": "Watermelon ISO Clear Powder",
+  "item.testmod.whey_isolate": "Whey Isolate",
+  "item.testmod.chisel": "Chisel",
+
+  "item.testmod.pink_garnet": "Pink Garnet",
+  "item.testmod.raw_pink_garnet": "Raw Pink Garnet",
+
+  "item.testmod.cauliflower": "Cauliflower",
+  "item.testmod.broccoli": "Broccoli",
+  "item.testmod.starlight_ashes": "Starlight Ashes",
+
+  "tooltip.testmod.magic_block.tooltip": "§9MAGIC!!!§r",
+  "tooltip.testmod.chisel.shift_down": "LEGG EIER :)",
+  "tooltip.testmod.chisel": "Press $eShift§r for more Information!",
+
+
+
+  "itemgroup.testmod.gainz_items": "Gainz"
+}

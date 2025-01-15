@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 1,
+  "ingredient": "minecraft:milk_bucket",
+  "result": {
+    "id": "testmod:whey_isolate",
+    "count": 8
+  }
+}

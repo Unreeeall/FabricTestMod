@@ -1,7 +1,11 @@
 package me.unreal.testmod;
 
+import me.unreal.testmod.block.ModBlocks;
+import me.unreal.testmod.item.ModItemGroups;
+import me.unreal.testmod.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,6 +22,15 @@ public class TestMod implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
+
+
+		ModItemGroups.registerItemGroups(); //Initialize item groups
+		ModItems.registerModItems(); // Initialize items
+		ModBlocks.registerModBlocks(); // Initialize blocks
+
+		FuelRegistryEvents.BUILD.register((builder, context) ->
+				builder.add(ModItems.STARLIGHT_ASHES, 600));
+
 
 		LOGGER.info("Hello Fabric world!");
 	}
