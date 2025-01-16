@@ -3,10 +3,7 @@ package me.unreal.testmod.block;
 import me.unreal.testmod.TestMod;
 import me.unreal.testmod.block.custom.MagicBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.StairsBlock;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -73,12 +70,30 @@ public class ModBlocks {
                     .sounds(BlockSoundGroup.VAULT)
     );
 
+    public static final Block PINK_GARNET_STAIRS = registerStairBlock("pink_garnet_stairs",
+            ModBlocks.PINK_GARNET_BLOCK, AbstractBlock.Settings.create()
+                    .strength(2f)
+                    .requiresTool()
+    );
+    public static final Block PINK_GARNET_SLAB = registerBlock("pink_garnet_slab",
+            SlabBlock::new, AbstractBlock.Settings.create()
+                    .strength(2f)
+                    .requiresTool()
+    );
+    public static final Block PINK_GARNET_BUTTON = registerButtonBlock("pink_garnet_button",
+            BlockSetType.IRON, 10, AbstractBlock.Settings.create()
+                    .strength(2f)
+                    .requiresTool()
+                    .noCollision()
+    );
     /*
-    public static final Block PINK_GARNET_STAIRS = registerBlock("pink_garnet_stairs",
-            StairsBlock::new, ModBlocks.PINK_GARNET_BLOCK.getDefaultState(),
-                    AbstractBlock.Settings.create().strength(2f).requiresTool()
+    public static final Block PINK_GARNET_PRESSURE_PLATE = registerStairBlock("pink_garnet_pressure_plate",
+            ModBlocks.PINK_GARNET_BLOCK, AbstractBlock.Settings.create()
+                    .strength(2f)
+                    .requiresTool()
     );
     */
+
 
     /// //////////////////////////////////////////////////////////
     //Test for alternative way to make blocks
@@ -119,6 +134,32 @@ public class ModBlocks {
         return block;
     }
 
+    /// ///////////////////////////////////////////////////////////////////////////
+    // From GPT:
+    // Stairs
+    public static Block registerStairBlock(String name, Block baseBlock, AbstractBlock.Settings settings) {
+        return registerBlock(name, s -> new StairsBlock(baseBlock.getDefaultState(), s), settings);
+    }
+
+    // Slabs
+    public static Block registerSlabBlock(String name, AbstractBlock.Settings settings) {
+        return registerBlock(name, SlabBlock::new, settings);
+    }
+
+    // Fences
+    public static Block registerFenceBlock(String name, AbstractBlock.Settings settings) {
+        return registerBlock(name, FenceBlock::new, settings);
+    }
+
+    // Doors
+    public static Block registerDoorBlock(String name, AbstractBlock.Settings settings, BlockSetType blockSetType) {
+        return registerBlock(name, s -> new DoorBlock(blockSetType, s), settings);
+    }
+
+    public static Block registerButtonBlock(String name, BlockSetType blockSetType, int pressTicks, AbstractBlock.Settings settings) {
+        return registerBlock(name, s -> new ButtonBlock(blockSetType, pressTicks,  s), settings);
+    }
+    /// ///////////////////////////////////////////////////////////////////////////
     private static void registerBlockItem(String name, Block block) {
         Registry.register(Registries.ITEM, Identifier.of(TestMod.MOD_ID, name),
                 new BlockItem(block, new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TestMod.MOD_ID, name)))));
@@ -137,6 +178,7 @@ public class ModBlocks {
             entries.add(ModBlocks.PINK_GARNET_DEEPSLATE_ORE);
             entries.add(ModBlocks.MAGIC_BLOCK);
             entries.add(ModBlocks.CONDENSED_DIRT);
+            entries.add(ModBlocks.PINK_GARNET_STAIRS);
 
         });
     }
