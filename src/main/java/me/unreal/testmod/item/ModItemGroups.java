@@ -40,6 +40,14 @@ public class ModItemGroups {
                         entries.add(ModItems.CAUILIFLOWER);
                         entries.add(ModItems.BROCCOLI);
                         entries.add(ModItems.STARLIGHT_ASHES);
+
+                        entries.add(ModBlocks.PINK_GARNET_STAIRS);
+                        entries.add(ModBlocks.PINK_GARNET_BUTTON);
+                        entries.add(ModBlocks.PINK_GARNET_DOOR);
+                        entries.add(ModBlocks.PINK_GARNET_FENCE);
+                        entries.add(ModBlocks.PINK_GARNET_PRESSURE_PLATE);
+                        entries.add(ModBlocks.PINK_GARNET_SLAB);
+                        entries.add(ModBlocks.PINK_GARNET_TRAPDOOR);
                     }).build());
 
 

@@ -37,11 +37,15 @@ public class ModBlocks {
                             .sounds(BlockSoundGroup.CREAKING_HEART)
     );
 
+    /*
     public static final Block PINK_GARNET_BLOCK = registerBlock("pink_garnet_block",
             Block::new, AbstractBlock.Settings.create()
                     .strength(4f)
                     .requiresTool()
-                    .sounds(BlockSoundGroup.AMETHYST_BLOCK));
+                    .sounds(BlockSoundGroup.AMETHYST_BLOCK)
+     );
+
+     */
 
     public static final Block RAW_PINK_GARNET_BLOCK = registerBlock("raw_pink_garnet_block",
             Block::new, AbstractBlock.Settings.create()
@@ -70,6 +74,10 @@ public class ModBlocks {
                     .sounds(BlockSoundGroup.VAULT)
     );
 
+
+
+
+    /*
     public static final Block PINK_GARNET_STAIRS = registerStairBlock("pink_garnet_stairs",
             ModBlocks.PINK_GARNET_BLOCK, AbstractBlock.Settings.create()
                     .strength(2f)
@@ -86,6 +94,83 @@ public class ModBlocks {
                     .requiresTool()
                     .noCollision()
     );
+
+     */
+
+
+    public static final Block PINK_GARNET_BLOCK = registerBlock("pink_garnet_block",
+            basicBlockFactory(), AbstractBlock.Settings.create().strength(3f).requiresTool());
+
+    public static final Block PINK_GARNET_STAIRS = registerBlock("pink_garnet_stairs",
+            stairsFactory(ModBlocks.PINK_GARNET_BLOCK), AbstractBlock.Settings.create().strength(2f).requiresTool());
+
+    public static final Block PINK_GARNET_SLAB = registerBlock("pink_garnet_slab",
+            slabFactory(), AbstractBlock.Settings.create().strength(2f).requiresTool());
+
+    public static final Block PINK_GARNET_BUTTON = registerBlock("pink_garnet_button",
+            buttonFactory(BlockSetType.IRON, 10), AbstractBlock.Settings.create().strength(2f).requiresTool());
+
+    public static final Block PINK_GARNET_FENCE = registerBlock("pink_garnet_fence",
+            fenceFactory(), AbstractBlock.Settings.create().strength(2f).requiresTool());
+
+    public static final Block PINK_GARNET_TRAPDOOR = registerBlock("pink_garnet_trapdoor",
+            trapdoorFactory(BlockSetType.IRON), AbstractBlock.Settings.create().strength(2f).requiresTool());
+
+    public static final Block PINK_GARNET_DOOR = registerBlock("pink_garnet_door",
+            doorFactory(BlockSetType.IRON), AbstractBlock.Settings.create().strength(2f).requiresTool());
+
+    public static final Block PINK_GARNET_PRESSURE_PLATE = registerBlock("pink_garnet_pressure_plate",
+            pressurePlateFactory(BlockSetType.IRON), AbstractBlock.Settings.create().strength(2f).requiresTool());
+
+
+
+    public static Function<AbstractBlock.Settings, Block> basicBlockFactory() {
+        return Block::new;
+    }
+
+    // Stairs Block
+    public static Function<AbstractBlock.Settings, Block> stairsFactory(Block baseBlock) {
+        return settings -> new StairsBlock(baseBlock.getDefaultState(), settings);
+    }
+
+    // Slab Block
+    public static Function<AbstractBlock.Settings, Block> slabFactory() {
+        return SlabBlock::new;
+    }
+
+    // Button Block
+    public static Function<AbstractBlock.Settings, Block> buttonFactory(BlockSetType blockSetType, int pressTicks) {
+        return settings -> new ButtonBlock(blockSetType, pressTicks, settings);
+    }
+
+    // Fence Block
+    public static Function<AbstractBlock.Settings, Block> fenceFactory() {
+        return FenceBlock::new;
+    }
+
+    // Trapdoor Block
+    public static Function<AbstractBlock.Settings, Block> trapdoorFactory(BlockSetType blockSetType) {
+        return settings -> new TrapdoorBlock(blockSetType, settings);
+    }
+
+    // Door Block
+    public static Function<AbstractBlock.Settings, Block> doorFactory(BlockSetType blockSetType) {
+        return settings -> new DoorBlock(blockSetType, settings);
+    }
+
+    // Pressure Plate Block
+    public static Function<AbstractBlock.Settings, Block> pressurePlateFactory(BlockSetType blockSetType) {
+        return settings -> new PressurePlateBlock(blockSetType, settings);
+    }
+
+    public static Block registerBlock(String name, Function<AbstractBlock.Settings, Block> blockFactory, AbstractBlock.Settings settings) {
+        final Identifier identifier = Identifier.of(TestMod.MOD_ID, name);
+        final RegistryKey<Block> registryKey = RegistryKey.of(RegistryKeys.BLOCK, identifier);
+        final Block block = Blocks.register(registryKey, blockFactory.apply(settings).getSettings());
+        registerBlockItem(name, block);
+        return block;
+    }
+
     /*
     public static final Block PINK_GARNET_PRESSURE_PLATE = registerStairBlock("pink_garnet_pressure_plate",
             ModBlocks.PINK_GARNET_BLOCK, AbstractBlock.Settings.create()
@@ -95,6 +180,10 @@ public class ModBlocks {
     */
 
 
+
+
+
+    /*
     /// //////////////////////////////////////////////////////////
     //Test for alternative way to make blocks
     public static final RegistryKey<Block> CONDENSED_DIRT_KEY = RegistryKey.of(
@@ -124,6 +213,24 @@ public class ModBlocks {
     }
     /// /////////////////////////////////////////////////////////////////////
 
+     */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
     //HELPER METHODS:
 
     private static Block registerBlock(String name, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
@@ -160,6 +267,15 @@ public class ModBlocks {
         return registerBlock(name, s -> new ButtonBlock(blockSetType, pressTicks,  s), settings);
     }
     /// ///////////////////////////////////////////////////////////////////////////
+
+     */
+
+
+
+
+
+
+
     private static void registerBlockItem(String name, Block block) {
         Registry.register(Registries.ITEM, Identifier.of(TestMod.MOD_ID, name),
                 new BlockItem(block, new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TestMod.MOD_ID, name)))));
@@ -177,8 +293,14 @@ public class ModBlocks {
             entries.add(ModBlocks.PINK_GARNET_ORE);
             entries.add(ModBlocks.PINK_GARNET_DEEPSLATE_ORE);
             entries.add(ModBlocks.MAGIC_BLOCK);
-            entries.add(ModBlocks.CONDENSED_DIRT);
+            //entries.add(ModBlocks.CONDENSED_DIRT);
             entries.add(ModBlocks.PINK_GARNET_STAIRS);
+            entries.add(ModBlocks.PINK_GARNET_BUTTON);
+            entries.add(ModBlocks.PINK_GARNET_DOOR);
+            entries.add(ModBlocks.PINK_GARNET_FENCE);
+            entries.add(ModBlocks.PINK_GARNET_PRESSURE_PLATE);
+            entries.add(ModBlocks.PINK_GARNET_SLAB);
+            entries.add(ModBlocks.PINK_GARNET_TRAPDOOR);
 
         });
     }
