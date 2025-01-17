@@ -70,29 +70,71 @@ public class ModBlocks {
                     .sounds(BlockSoundGroup.VAULT)
     );
 
-    public static final Block PINK_GARNET_STAIRS = registerStairBlock("pink_garnet_stairs",
-            ModBlocks.PINK_GARNET_BLOCK, AbstractBlock.Settings.create()
-                    .strength(2f)
+    public static final Block PINK_GARNET_STAIRS = registerBlock("pink_garnet_stairs",
+            settings -> new StairsBlock(ModBlocks.PINK_GARNET_BLOCK.getDefaultState(), settings),
+            AbstractBlock.Settings.create()
+                    .strength(3f)
                     .requiresTool()
     );
+
     public static final Block PINK_GARNET_SLAB = registerBlock("pink_garnet_slab",
             SlabBlock::new, AbstractBlock.Settings.create()
                     .strength(2f)
                     .requiresTool()
     );
-    public static final Block PINK_GARNET_BUTTON = registerButtonBlock("pink_garnet_button",
-            BlockSetType.IRON, 10, AbstractBlock.Settings.create()
-                    .strength(2f)
+    public static final Block PINK_GARNET_BUTTON = registerBlock("pink_garnet_button",
+            settings -> new ButtonBlock(BlockSetType.IRON, 2, settings),
+            AbstractBlock.Settings.create()
+                    .strength(1f)
                     .requiresTool()
                     .noCollision()
     );
-    /*
-    public static final Block PINK_GARNET_PRESSURE_PLATE = registerStairBlock("pink_garnet_pressure_plate",
-            ModBlocks.PINK_GARNET_BLOCK, AbstractBlock.Settings.create()
+
+    public static final Block PINK_GARNET_PRESSURE_PLATE = registerBlock("pink_garnet_pressure_plate",
+            settings -> new PressurePlateBlock(BlockSetType.IRON, settings),
+            AbstractBlock.Settings.create()
                     .strength(2f)
                     .requiresTool()
     );
-    */
+
+    public static final Block PINK_GARNET_FENCE = registerBlock("pink_garnet_fence",
+            FenceBlock::new, AbstractBlock.Settings.create()
+                    .strength(2f)
+                    .requiresTool()
+    );
+
+    public static final Block PINK_GARNET_FENCE_GATE = registerBlock("pink_garnet_fence_gate",
+            settings -> new FenceGateBlock(WoodType.ACACIA, settings),
+            AbstractBlock.Settings.create()
+                    .strength(2f)
+                    .requiresTool()
+    );
+
+    public static final Block PINK_GARNET_WALL = registerBlock("pink_garnet_wall",
+            WallBlock::new, AbstractBlock.Settings.create()
+                    .strength(2f)
+                    .requiresTool()
+    );
+
+    public static final Block PINK_GARNET_DOOR = registerBlock("pink_garnet_door",
+            settings -> new DoorBlock(BlockSetType.IRON, settings),
+            AbstractBlock.Settings.create()
+                    .strength(2f)
+                    .requiresTool()
+                    .nonOpaque()
+    );
+
+    public static final Block PINK_GARNET_TRAPDOOR = registerBlock("pink_garnet_trapdoor",
+            settings -> new TrapdoorBlock(BlockSetType.IRON, settings),
+            AbstractBlock.Settings.create()
+                    .strength(2f)
+                    .requiresTool()
+                    .nonOpaque()
+    );
+
+
+
+
 
 
     /// //////////////////////////////////////////////////////////
@@ -107,6 +149,11 @@ public class ModBlocks {
             CONDENSED_DIRT_KEY,
             true
     );
+
+
+
+
+
 
     public static Block register(Block block, RegistryKey<Block> blockKey, boolean shouldRegisterItem) {
         // Sometimes, you may not want to register an item for the block.
@@ -135,30 +182,8 @@ public class ModBlocks {
     }
 
     /// ///////////////////////////////////////////////////////////////////////////
-    // From GPT:
-    // Stairs
-    public static Block registerStairBlock(String name, Block baseBlock, AbstractBlock.Settings settings) {
-        return registerBlock(name, s -> new StairsBlock(baseBlock.getDefaultState(), s), settings);
-    }
 
-    // Slabs
-    public static Block registerSlabBlock(String name, AbstractBlock.Settings settings) {
-        return registerBlock(name, SlabBlock::new, settings);
-    }
 
-    // Fences
-    public static Block registerFenceBlock(String name, AbstractBlock.Settings settings) {
-        return registerBlock(name, FenceBlock::new, settings);
-    }
-
-    // Doors
-    public static Block registerDoorBlock(String name, AbstractBlock.Settings settings, BlockSetType blockSetType) {
-        return registerBlock(name, s -> new DoorBlock(blockSetType, s), settings);
-    }
-
-    public static Block registerButtonBlock(String name, BlockSetType blockSetType, int pressTicks, AbstractBlock.Settings settings) {
-        return registerBlock(name, s -> new ButtonBlock(blockSetType, pressTicks,  s), settings);
-    }
     /// ///////////////////////////////////////////////////////////////////////////
     private static void registerBlockItem(String name, Block block) {
         Registry.register(Registries.ITEM, Identifier.of(TestMod.MOD_ID, name),
@@ -179,6 +204,15 @@ public class ModBlocks {
             entries.add(ModBlocks.MAGIC_BLOCK);
             entries.add(ModBlocks.CONDENSED_DIRT);
             entries.add(ModBlocks.PINK_GARNET_STAIRS);
+            entries.add(ModBlocks.PINK_GARNET_SLAB);
+            entries.add(ModBlocks.PINK_GARNET_PRESSURE_PLATE);
+            entries.add(ModBlocks.PINK_GARNET_BUTTON);
+            entries.add(ModBlocks.PINK_GARNET_FENCE);
+            entries.add(ModBlocks.PINK_GARNET_FENCE_GATE);
+            entries.add(ModBlocks.PINK_GARNET_WALL);
+            entries.add(ModBlocks.PINK_GARNET_DOOR);
+            entries.add(ModBlocks.PINK_GARNET_TRAPDOOR);
+
 
         });
     }
