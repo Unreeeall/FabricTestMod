@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_pink_garnet_stairs": {
+      "conditions": {
+        "items": [
+          {
+            "items": "testmod:pink_garnet_stairs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "testmod:pink_garnet_stairs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_pink_garnet_stairs"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "testmod:pink_garnet_stairs"
+    ]
+  }
+}

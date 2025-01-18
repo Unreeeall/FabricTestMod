@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.recipe.RecipeExporter;
 import net.minecraft.data.recipe.RecipeGenerator;
 import net.minecraft.item.ItemConvertible;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -54,6 +55,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input(ModBlocks.MAGIC_BLOCK)
                         .criterion(hasItem(ModBlocks.MAGIC_BLOCK), conditionsFromItem(ModBlocks.MAGIC_BLOCK))
                         .offerTo(exporter, RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(TestMod.MOD_ID, "raw_pink_garnet_from_magic_block")));
+
+                createStairsRecipe(ModBlocks.PINK_GARNET_STAIRS, Ingredient.ofItem(ModBlocks.PINK_GARNET_BLOCK))
+                        .criterion(hasItem(ModBlocks.PINK_GARNET_STAIRS), conditionsFromItem(ModBlocks.PINK_GARNET_STAIRS))
+                        .offerTo(exporter);
 
                 /*
                 offerSmithingTrimRecipe(ModItems.UNREAL_SMITHING_TEMPLATE, RegistryKey.of(RegistryKeys.RECIPE,
