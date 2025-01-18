@@ -39,6 +39,14 @@
   "item.testmod.pink_garnet_hoe": "Pink Garnet Hoe",
   "item.testmod.pink_garnet_shovel": "Pink Garnet Shovel",
 
+  "item.testmod.pink_garnet_hammer": "Pink Garnet Hammer",
+
+  "item.testmod.pink_garnet_helmet": "Pink Garnet Helmet",
+  "item.testmod.pink_garnet_chestplate": "Pink Garnet Chestplate",
+  "item.testmod.pink_garnet_leggins": "Pink Garnet Leggins",
+  "item.testmod.pink_garnet_boots": "Pink Garnet Boots",
+
+
 
   "tooltip.testmod.magic_block.tooltip": "§9MAGIC!!!§r",
   "tooltip.testmod.chisel.shift_down": "LEGG EIER :)",

@@ -2,9 +2,11 @@ package me.unreal.testmod.item;
 
 import me.unreal.testmod.TestMod;
 import me.unreal.testmod.item.custom.ChiselItem;
+import me.unreal.testmod.item.custom.HammerItem;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.item.*;
+import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -36,6 +38,7 @@ public final class ModItems {
     public static final Item BROCCOLI = registerItem("broccoli", Item::new, new Item.Settings().rarity(Rarity.EPIC).food(ModFoodComponents.BROCCOLI, ModConsumableComponents.BROCCOLI));
     public static final Item STARLIGHT_ASHES = registerItem("starlight_ashes", Item::new, new Item.Settings());
 
+
     public static final Item PINK_GARNET_SWORD = registerItem("pink_garnet_sword",
             settings -> new SwordItem(ModToolMaterials.PINK_GARNET, 3, -2.4f, settings),
             new Item.Settings());
@@ -51,6 +54,25 @@ public final class ModItems {
     public static final Item PINK_GARNET_AXE = registerItem("pink_garnet_axe",
             settings -> new AxeItem(ModToolMaterials.PINK_GARNET, 6, -3.2f, settings),
             new Item.Settings());
+
+
+    public static final Item PINK_GARNET_HAMMER = registerItem("pink_garnet_hammer",
+            settings -> new HammerItem(ModToolMaterials.PINK_GARNET, 7, -3.4f, settings),
+            new Item.Settings());
+
+
+    public static final Item PINK_GARNET_HELMET = registerItem("pink_garnet_helmet",
+            settings -> new ArmorItem(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL, EquipmentType.HELMET, settings),
+            new Item.Settings().maxDamage(EquipmentType.HELMET.getMaxDamage(15)));
+    public static final Item PINK_GARNET_CHESTPLATE = registerItem("pink_garnet_chestplate",
+            settings -> new ArmorItem(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL, EquipmentType.CHESTPLATE, settings),
+            new Item.Settings().maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(15)));
+    public static final Item PINK_GARNET_LEGGINS = registerItem("pink_garnet_leggins",
+            settings -> new ArmorItem(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL, EquipmentType.LEGGINGS, settings),
+            new Item.Settings().maxDamage(EquipmentType.LEGGINGS.getMaxDamage(15)));
+    public static final Item PINK_GARNET_BOOTS = registerItem("pink_garnet_boots",
+            settings -> new ArmorItem(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL, EquipmentType.BOOTS, settings),
+            new Item.Settings().maxDamage(EquipmentType.BOOTS.getMaxDamage(15)));
 
 
 
@@ -90,6 +112,14 @@ public final class ModItems {
             entries.add(PINK_GARNET_AXE);
             entries.add(PINK_GARNET_SHOVEL);
             entries.add(PINK_GARNET_HOE);
+
+
+            entries.add(PINK_GARNET_HAMMER);
+
+            entries.add(PINK_GARNET_HELMET);
+            entries.add(PINK_GARNET_CHESTPLATE);
+            entries.add(PINK_GARNET_LEGGINS);
+            entries.add(PINK_GARNET_BOOTS);
 
 
         });

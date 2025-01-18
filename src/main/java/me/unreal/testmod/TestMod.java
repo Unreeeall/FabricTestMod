@@ -4,8 +4,10 @@ import me.unreal.testmod.block.ModBlocks;
 import me.unreal.testmod.component.ModDataComponentTypes;
 import me.unreal.testmod.item.ModItemGroups;
 import me.unreal.testmod.item.ModItems;
+import me.unreal.testmod.util.HammerUsageEvent;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,6 +34,7 @@ public class TestMod implements ModInitializer {
 		FuelRegistryEvents.BUILD.register((builder, context) ->
 				builder.add(ModItems.STARLIGHT_ASHES, 600));
 
+		PlayerBlockBreakEvents.BEFORE.register(new HammerUsageEvent());
 
 		LOGGER.info("Hello Fabric world!");
 	}

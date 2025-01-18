@@ -1,11 +1,16 @@
 package me.unreal.testmod.datagen;
 
+import me.unreal.testmod.TestMod;
 import me.unreal.testmod.block.ModBlocks;
 import me.unreal.testmod.block.custom.PinkGarnetLampBlock;
+import me.unreal.testmod.item.ModEquipmentAssetKeys;
 import me.unreal.testmod.item.ModItems;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.client.data.*;
+import net.minecraft.client.render.entity.equipment.EquipmentModel;
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.util.Identifier;
 
 public class ModModelProvider extends FabricModelProvider {
@@ -75,5 +80,14 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.PINK_GARNET_AXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PINK_GARNET_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PINK_GARNET_HOE, Models.HANDHELD);
+
+        itemModelGenerator.register(ModItems.PINK_GARNET_HAMMER, Models.HANDHELD);
+
+
+        itemModelGenerator.registerArmor(ModItems.PINK_GARNET_HELMET, ModEquipmentAssetKeys.PINK_GARNET, "pink_garnet", false);
+        itemModelGenerator.registerArmor(ModItems.PINK_GARNET_CHESTPLATE, ModEquipmentAssetKeys.PINK_GARNET, "pink_garnet", false);
+        itemModelGenerator.registerArmor(ModItems.PINK_GARNET_LEGGINS, ModEquipmentAssetKeys.PINK_GARNET, "pink_garnet", false);
+        itemModelGenerator.registerArmor(ModItems.PINK_GARNET_BOOTS, ModEquipmentAssetKeys.PINK_GARNET, "pink_garnet", false);
+
     }
 }
