@@ -1,6 +1,7 @@
 package me.unreal.testmod;
 
 import me.unreal.testmod.block.ModBlocks;
+import me.unreal.testmod.component.ModDataComponentTypes;
 import me.unreal.testmod.item.ModItemGroups;
 import me.unreal.testmod.item.ModItems;
 import net.fabricmc.api.ModInitializer;
@@ -23,10 +24,10 @@ public class TestMod implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-
 		ModItemGroups.registerItemGroups(); //Initialize item groups
 		ModItems.registerModItems(); // Initialize items
 		ModBlocks.registerModBlocks(); // Initialize blocks
+		ModDataComponentTypes.registerDataComponentTypes();
 
 		FuelRegistryEvents.BUILD.register((builder, context) ->
 				builder.add(ModItems.STARLIGHT_ASHES, 600));

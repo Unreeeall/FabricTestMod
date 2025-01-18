@@ -2,6 +2,7 @@ package me.unreal.testmod.block;
 
 import me.unreal.testmod.TestMod;
 import me.unreal.testmod.block.custom.MagicBlock;
+import me.unreal.testmod.block.custom.PinkGarnetLampBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
@@ -132,6 +133,13 @@ public class ModBlocks {
                     .nonOpaque()
     );
 
+    public static final Block PINK_GARNET_LAMP = registerBlock("pink_garnet_lamp",
+            PinkGarnetLampBlock::new, AbstractBlock.Settings.create()
+                    .strength(1f)
+                    .requiresTool().luminance(state -> state.get(PinkGarnetLampBlock.CLICKED) ? 15 : 0)
+    );
+
+
 
 
 
@@ -202,7 +210,9 @@ public class ModBlocks {
             entries.add(ModBlocks.PINK_GARNET_ORE);
             entries.add(ModBlocks.PINK_GARNET_DEEPSLATE_ORE);
             entries.add(ModBlocks.MAGIC_BLOCK);
+
             entries.add(ModBlocks.CONDENSED_DIRT);
+
             entries.add(ModBlocks.PINK_GARNET_STAIRS);
             entries.add(ModBlocks.PINK_GARNET_SLAB);
             entries.add(ModBlocks.PINK_GARNET_PRESSURE_PLATE);
@@ -212,6 +222,8 @@ public class ModBlocks {
             entries.add(ModBlocks.PINK_GARNET_WALL);
             entries.add(ModBlocks.PINK_GARNET_DOOR);
             entries.add(ModBlocks.PINK_GARNET_TRAPDOOR);
+
+            entries.add(ModBlocks.PINK_GARNET_LAMP);
 
 
         });

@@ -4,10 +4,7 @@ import me.unreal.testmod.TestMod;
 import me.unreal.testmod.item.custom.ChiselItem;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
+import net.minecraft.item.*;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -39,6 +36,26 @@ public final class ModItems {
     public static final Item BROCCOLI = registerItem("broccoli", Item::new, new Item.Settings().rarity(Rarity.EPIC).food(ModFoodComponents.BROCCOLI, ModConsumableComponents.BROCCOLI));
     public static final Item STARLIGHT_ASHES = registerItem("starlight_ashes", Item::new, new Item.Settings());
 
+    public static final Item PINK_GARNET_SWORD = registerItem("pink_garnet_sword",
+            settings -> new SwordItem(ModToolMaterials.PINK_GARNET, 3, -2.4f, settings),
+            new Item.Settings());
+    public static final Item PINK_GARNET_PICKAXE = registerItem("pink_garnet_pickaxe",
+            settings -> new PickaxeItem(ModToolMaterials.PINK_GARNET, 1, -2.8f, settings),
+            new Item.Settings());
+    public static final Item PINK_GARNET_SHOVEL = registerItem("pink_garnet_shovel",
+            settings -> new ShovelItem(ModToolMaterials.PINK_GARNET, 1.5f, -3.0f, settings),
+            new Item.Settings());
+    public static final Item PINK_GARNET_HOE = registerItem("pink_garnet_hoe",
+            settings -> new HoeItem(ModToolMaterials.PINK_GARNET, 0, -3.0f, settings),
+            new Item.Settings());
+    public static final Item PINK_GARNET_AXE = registerItem("pink_garnet_axe",
+            settings -> new AxeItem(ModToolMaterials.PINK_GARNET, 6, -3.2f, settings),
+            new Item.Settings());
+
+
+
+
+
 
     //HELPER METHODS:
     private static Item registerItem(String name, Function<Item.Settings, Item> factory, Item.Settings settings)
@@ -67,6 +84,14 @@ public final class ModItems {
             entries.add(CAUILIFLOWER);
             entries.add(BROCCOLI);
             entries.add(STARLIGHT_ASHES);
+
+            entries.add(PINK_GARNET_SWORD);
+            entries.add(PINK_GARNET_PICKAXE);
+            entries.add(PINK_GARNET_AXE);
+            entries.add(PINK_GARNET_SHOVEL);
+            entries.add(PINK_GARNET_HOE);
+
+
         });
     }
 }

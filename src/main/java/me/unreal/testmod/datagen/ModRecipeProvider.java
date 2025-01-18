@@ -5,9 +5,13 @@ import me.unreal.testmod.block.ModBlocks;
 import me.unreal.testmod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.client.data.TextureMap;
 import net.minecraft.data.recipe.RecipeExporter;
 import net.minecraft.data.recipe.RecipeGenerator;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
+import net.minecraft.item.Items;
+import net.minecraft.item.SwordItem;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryKey;
@@ -60,6 +64,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModBlocks.PINK_GARNET_STAIRS), conditionsFromItem(ModBlocks.PINK_GARNET_STAIRS))
                         .offerTo(exporter);
 
+
+
+
+
+
                 /*
                 offerSmithingTrimRecipe(ModItems.UNREAL_SMITHING_TEMPLATE, RegistryKey.of(RegistryKeys.RECIPE,
                         Identifier.ofVanilla(getItemPath(ModItems.UNREAL_SMITHING_TEMPLATE) + "_smithing_trim")));
@@ -68,6 +77,19 @@ public class ModRecipeProvider extends FabricRecipeProvider {
             }
         };
     }
+/*
+    private static void createSwordRecipe(RecipeExporter exporter, Item sword, Item bladeMaterial, Item handleMaterial, Item rawMaterial){
+        createShaped(RecipeCategory.COMBAT, sword)
+                .pattern(" B ")
+                .pattern(" B ")
+                .pattern(" H ")
+                .input('B', bladeMaterial)
+                .input('H', handleMaterial)
+                .criterion(hasItem(rawMaterial), conditionsFromItem(rawMaterial))
+                .offerTo(exporter);
+    }
+*/
+
 
     @Override
     public String getName() {
