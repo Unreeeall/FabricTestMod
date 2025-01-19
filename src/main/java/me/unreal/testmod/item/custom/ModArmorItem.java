@@ -47,12 +47,19 @@ public class ModArmorItem extends ArmorItem {
 
     private void evaluateArmorEffects(PlayerEntity player) {
         for (Map.Entry<ArmorMaterial, List<StatusEffectInstance>> entry : MATERIAL_TO_EFFECT_MAP.entrySet()) {
-            EquipmentAsset mapArmorMaterial = entry.getKey();
+            ArmorMaterial mapArmorMaterial = entry.getKey();
             List<StatusEffectInstance> mapStatusEffects = entry.getValue();
 
             if (hasCorrectArmorOn(mapArmorMaterial, player)) {
                 addStatusEffectForMaterial(player, mapArmorMaterial, mapStatusEffects);
             }
+            //RegistryKey<EquipmentAsset> materialAssetId = entry.getKey().assetId(); // Asset ID of the material
+            //List<StatusEffectInstance> statusEffects = entry.getValue(); // Effects associated with the material
+
+            // Check if the player is wearing the full set of this material
+            //if (hasCorrectArmorOn(materialAssetId, player)) {
+            //    addStatusEffectForMaterial(player, mapArmorMaterial, statusEffects);
+            //}
         }
     }
 
@@ -77,10 +84,11 @@ public class ModArmorItem extends ArmorItem {
                 && !leggings.isEmpty() && !boots.isEmpty();
     }
 
-    /*
+
     private boolean hasCorrectArmorOn(ArmorMaterial material, PlayerEntity player) {
         for (ItemStack armorStack : player.getInventory().armor) {
             if (!(armorStack.getItem() instanceof ArmorItem)) {
+                System.out.println("EI1");
                 return false;
             }
         }
@@ -90,32 +98,44 @@ public class ModArmorItem extends ArmorItem {
         ArmorItem chestplate = ((ArmorItem) player.getInventory().getArmorStack(2).getItem());
         ArmorItem helmet = ((ArmorItem) player.getInventory().getArmorStack(3).getItem());
 
+        System.out.println("EI2");
+
         EquippableComponent equippableComponentBoots = boots.getComponents().get(DataComponentTypes.EQUIPPABLE);
         EquippableComponent equippableComponentLeggings = leggings.getComponents().get(DataComponentTypes.EQUIPPABLE);
         EquippableComponent equippableComponentChestplate = chestplate.getComponents().get(DataComponentTypes.EQUIPPABLE);
         EquippableComponent equippableComponentHelmet = helmet.getComponents().get(DataComponentTypes.EQUIPPABLE);
 
-        return equippableComponentBoots.equals(material.assetId()) && equippableComponentLeggings.equals(material.assetId()) &&
+        System.out.println("EI3" + equippableComponentBoots.assetId().equals(material.assetId()));
+
+        return equippableComponentBoots.assetId().equals(material.assetId()) && equippableComponentLeggings.equals(material.assetId()) &&
                 equippableComponentChestplate.equals(material.assetId()) && equippableComponentHelmet.equals(material.assetId());
     }
 
-     */
+
 
 
     //GPT approach
+    /*
     private boolean hasCorrectArmorOn(RegistryKey<EquipmentAsset> targetAssetId, PlayerEntity player) {
         for (ItemStack armorStack : player.getInventory().armor) {
             if (!(armorStack.getItem() instanceof ArmorItem armorItem)) {
+                //System.out.println("EI1" + armorStack.getItem());
+                System.out.println("EI1");
                 return false; // Not an ArmorItem
             }
 
             // Retrieve the EquippableComponent
             EquippableComponent equippable = armorItem.getComponents().get(DataComponentTypes.EQUIPPABLE);
             if (equippable == null || !equippable.assetId().equals(targetAssetId)) {
+                //System.out.println("EI2" + armorItem.getComponents());
+                //System.out.println("EI3" + armorItem.getComponents().get(DataComponentTypes.EQUIPPABLE));
+                System.out.println("EI2 Missing or mismatched assetId");
                 return false; // Missing or mismatched assetId
             }
         }
-
+        System.out.println("EI2 All armor pieces match the target assetId");
         return true; // All armor pieces match the target assetId
     }
+
+     */
 }

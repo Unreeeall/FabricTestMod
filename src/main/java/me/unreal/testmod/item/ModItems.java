@@ -3,6 +3,7 @@ package me.unreal.testmod.item;
 import me.unreal.testmod.TestMod;
 import me.unreal.testmod.item.custom.ChiselItem;
 import me.unreal.testmod.item.custom.HammerItem;
+import me.unreal.testmod.item.custom.ModArmorItem;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.item.*;
@@ -62,16 +63,16 @@ public final class ModItems {
 
 
     public static final Item PINK_GARNET_HELMET = registerItem("pink_garnet_helmet",
-            settings -> new ArmorItem(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL, EquipmentType.HELMET, settings),
+            settings -> new ModArmorItem(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL, EquipmentType.HELMET, settings),
             new Item.Settings().maxDamage(EquipmentType.HELMET.getMaxDamage(15)));
     public static final Item PINK_GARNET_CHESTPLATE = registerItem("pink_garnet_chestplate",
-            settings -> new ArmorItem(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL, EquipmentType.CHESTPLATE, settings),
+            settings -> new ModArmorItem(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL, EquipmentType.CHESTPLATE, settings),
             new Item.Settings().maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(15)));
     public static final Item PINK_GARNET_LEGGINGS = registerItem("pink_garnet_leggins",
-            settings -> new ArmorItem(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL, EquipmentType.LEGGINGS, settings),
+            settings -> new ModArmorItem(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL, EquipmentType.LEGGINGS, settings),
             new Item.Settings().maxDamage(EquipmentType.LEGGINGS.getMaxDamage(15)));
     public static final Item PINK_GARNET_BOOTS = registerItem("pink_garnet_boots",
-            settings -> new ArmorItem(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL, EquipmentType.BOOTS, settings),
+            settings -> new ModArmorItem(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL, EquipmentType.BOOTS, settings),
             new Item.Settings().maxDamage(EquipmentType.BOOTS.getMaxDamage(15)));
 
 
