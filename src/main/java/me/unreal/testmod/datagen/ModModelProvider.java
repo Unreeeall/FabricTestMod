@@ -11,6 +11,7 @@ import net.minecraft.client.data.*;
 import net.minecraft.client.render.entity.equipment.EquipmentModel;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorItem;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 
 public class ModModelProvider extends FabricModelProvider {
@@ -83,11 +84,22 @@ public class ModModelProvider extends FabricModelProvider {
 
         itemModelGenerator.register(ModItems.PINK_GARNET_HAMMER, Models.HANDHELD);
 
-
+        /* Own approach (I guess usefull when I want my own trim assets)
         itemModelGenerator.registerArmor(ModItems.PINK_GARNET_HELMET, ModEquipmentAssetKeys.PINK_GARNET, "pink_garnet", false);
         itemModelGenerator.registerArmor(ModItems.PINK_GARNET_CHESTPLATE, ModEquipmentAssetKeys.PINK_GARNET, "pink_garnet", false);
         itemModelGenerator.registerArmor(ModItems.PINK_GARNET_LEGGINS, ModEquipmentAssetKeys.PINK_GARNET, "pink_garnet", false);
         itemModelGenerator.registerArmor(ModItems.PINK_GARNET_BOOTS, ModEquipmentAssetKeys.PINK_GARNET, "pink_garnet", false);
 
+         */
+
+        //@galeriagaming7707 https://www.youtube.com/@galeriagaming7707
+        itemModelGenerator.registerArmor(ModItems.PINK_GARNET_HELMET, RegistryKey.of(RegistryKey.ofRegistry(Identifier.ofVanilla("equipment_asset")), Identifier.of(TestMod.MOD_ID, "pink_garnet")),
+                "helmet", false);
+        itemModelGenerator.registerArmor(ModItems.PINK_GARNET_CHESTPLATE, RegistryKey.of(RegistryKey.ofRegistry(Identifier.ofVanilla("equipment_asset")), Identifier.of(TestMod.MOD_ID, "pink_garnet")),
+                "chestplate", false);
+        itemModelGenerator.registerArmor(ModItems.PINK_GARNET_LEGGINGS, RegistryKey.of(RegistryKey.ofRegistry(Identifier.ofVanilla("equipment_asset")), Identifier.of(TestMod.MOD_ID, "pink_garnet")),
+                "leggings", false);
+        itemModelGenerator.registerArmor(ModItems.PINK_GARNET_BOOTS, RegistryKey.of(RegistryKey.ofRegistry(Identifier.ofVanilla("equipment_asset")), Identifier.of(TestMod.MOD_ID, "pink_garnet")),
+                "boots", false);
     }
 }

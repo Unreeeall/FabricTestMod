@@ -67,7 +67,7 @@ public final class ModItems {
     public static final Item PINK_GARNET_CHESTPLATE = registerItem("pink_garnet_chestplate",
             settings -> new ArmorItem(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL, EquipmentType.CHESTPLATE, settings),
             new Item.Settings().maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(15)));
-    public static final Item PINK_GARNET_LEGGINS = registerItem("pink_garnet_leggins",
+    public static final Item PINK_GARNET_LEGGINGS = registerItem("pink_garnet_leggins",
             settings -> new ArmorItem(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL, EquipmentType.LEGGINGS, settings),
             new Item.Settings().maxDamage(EquipmentType.LEGGINGS.getMaxDamage(15)));
     public static final Item PINK_GARNET_BOOTS = registerItem("pink_garnet_boots",
@@ -118,7 +118,7 @@ public final class ModItems {
 
             entries.add(PINK_GARNET_HELMET);
             entries.add(PINK_GARNET_CHESTPLATE);
-            entries.add(PINK_GARNET_LEGGINS);
+            entries.add(PINK_GARNET_LEGGINGS);
             entries.add(PINK_GARNET_BOOTS);
 
 

@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "testmod:pink_garnet"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "testmod:pink_garnet"
+      }
+    ]
+  }
+}
