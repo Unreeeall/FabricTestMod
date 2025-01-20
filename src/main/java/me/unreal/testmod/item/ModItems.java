@@ -76,6 +76,11 @@ public final class ModItems {
             new Item.Settings().maxDamage(EquipmentType.BOOTS.getMaxDamage(15)));
 
 
+    public static final Item PINK_GARNET_HORSE_ARMOR = registerItem("pink_garnet_horse_armor",
+            settings -> new AnimalArmorItem(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL, AnimalArmorItem.Type.EQUESTRIAN, settings),
+            new Item.Settings().maxCount(1));
+
+
 
 
 
@@ -121,6 +126,8 @@ public final class ModItems {
             entries.add(PINK_GARNET_CHESTPLATE);
             entries.add(PINK_GARNET_LEGGINGS);
             entries.add(PINK_GARNET_BOOTS);
+            entries.add(PINK_GARNET_HORSE_ARMOR);
+
 
 
         });

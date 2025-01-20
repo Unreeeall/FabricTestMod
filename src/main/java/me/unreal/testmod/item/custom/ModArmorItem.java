@@ -88,7 +88,7 @@ public class ModArmorItem extends ArmorItem {
     private boolean hasCorrectArmorOn(ArmorMaterial material, PlayerEntity player) {
         for (ItemStack armorStack : player.getInventory().armor) {
             if (!(armorStack.getItem() instanceof ArmorItem)) {
-                System.out.println("EI1");
+                //System.out.println("EI1");
                 return false;
             }
         }
@@ -98,14 +98,14 @@ public class ModArmorItem extends ArmorItem {
         ArmorItem chestplate = ((ArmorItem) player.getInventory().getArmorStack(2).getItem());
         ArmorItem helmet = ((ArmorItem) player.getInventory().getArmorStack(3).getItem());
 
-        System.out.println("EI2");
+        //System.out.println("EI2");
 
         EquippableComponent equippableComponentBoots = boots.getComponents().get(DataComponentTypes.EQUIPPABLE);
         EquippableComponent equippableComponentLeggings = leggings.getComponents().get(DataComponentTypes.EQUIPPABLE);
         EquippableComponent equippableComponentChestplate = chestplate.getComponents().get(DataComponentTypes.EQUIPPABLE);
         EquippableComponent equippableComponentHelmet = helmet.getComponents().get(DataComponentTypes.EQUIPPABLE);
 
-        System.out.println("EI3" + equippableComponentBoots.assetId().equals(material.assetId()));
+       // System.out.println("EI3" + equippableComponentBoots.assetId().equals(material.assetId()));
 
         return equippableComponentBoots.assetId().equals(material.assetId()) && equippableComponentLeggings.equals(material.assetId()) &&
                 equippableComponentChestplate.equals(material.assetId()) && equippableComponentHelmet.equals(material.assetId());

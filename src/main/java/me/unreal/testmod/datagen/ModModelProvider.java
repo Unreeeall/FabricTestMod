@@ -101,5 +101,8 @@ public class ModModelProvider extends FabricModelProvider {
                 "leggings", false);
         itemModelGenerator.registerArmor(ModItems.PINK_GARNET_BOOTS, RegistryKey.of(RegistryKey.ofRegistry(Identifier.ofVanilla("equipment_asset")), Identifier.of(TestMod.MOD_ID, "pink_garnet")),
                 "boots", false);
+
+
+        itemModelGenerator.register(ModItems.PINK_GARNET_HORSE_ARMOR, Models.GENERATED);
     }
 }
