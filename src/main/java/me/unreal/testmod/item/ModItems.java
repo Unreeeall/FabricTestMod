@@ -4,6 +4,7 @@ import me.unreal.testmod.TestMod;
 import me.unreal.testmod.item.custom.ChiselItem;
 import me.unreal.testmod.item.custom.HammerItem;
 import me.unreal.testmod.item.custom.ModArmorItem;
+import me.unreal.testmod.sound.ModSounds;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.item.*;
@@ -83,7 +84,10 @@ public final class ModItems {
 
 
 
-
+    public static final Item BAR_BRAWL_MUSIC_DISC = registerItem("bar_brawl_music_disc",
+            Item::new, new Item.Settings()
+                    .jukeboxPlayable(ModSounds.BAR_BRAWL_KEY)
+                    .maxCount(1));
 
     //HELPER METHODS:
     private static Item registerItem(String name, Function<Item.Settings, Item> factory, Item.Settings settings)
@@ -127,6 +131,7 @@ public final class ModItems {
             entries.add(PINK_GARNET_LEGGINGS);
             entries.add(PINK_GARNET_BOOTS);
             entries.add(PINK_GARNET_HORSE_ARMOR);
+            entries.add(BAR_BRAWL_MUSIC_DISC);
 
 
 

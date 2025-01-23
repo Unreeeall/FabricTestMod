@@ -48,6 +48,9 @@
 
   "item.testmod.pink_garnet_horse_armor": "Pink Garnet Horse Armor",
 
+  "item.testmod.bar_brawl_music_disc": "Bar Brawl Music Disc",
+  "item.testmod.bar_brawl_music_disc.desc": "Bryan Tech - Bar Brawl (CC0)",
+
 
 
   "tooltip.testmod.magic_block.tooltip": "§9MAGIC!!!§r",

@@ -73,6 +73,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.QUARGERMARK, Models.GENERATED);
         itemModelGenerator.register(ModItems.WATERMELON_ISO_CLEAR_POWDER, Models.GENERATED);
 
+        itemModelGenerator.register(ModItems.BAR_BRAWL_MUSIC_DISC, Models.GENERATED);
+
 
 
 
