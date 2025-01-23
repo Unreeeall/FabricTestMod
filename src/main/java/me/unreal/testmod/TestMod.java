@@ -7,8 +7,15 @@ import me.unreal.testmod.item.ModItems;
 import me.unreal.testmod.util.HammerUsageEvent;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.passive.SheepEntity;
+import net.minecraft.item.Items;
+import net.minecraft.text.Text;
+import net.minecraft.util.ActionResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,6 +42,18 @@ public class TestMod implements ModInitializer {
 				builder.add(ModItems.STARLIGHT_ASHES, 600));
 
 		PlayerBlockBreakEvents.BEFORE.register(new HammerUsageEvent());
+
+		AttackEntityCallback.EVENT.register(((playerEntity, world, hand, entity, entityHitResult) ->
+		{
+			if (entity instanceof SheepEntity sheepEntity) {
+				if (playerEntity.getMainHandStack().getItem() == Items.END_ROD) {
+					playerEntity.sendMessage(Text.literal("GOD DAMMIT!!! YOURE SICK!!!!!"), true);
+					sheepEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 200, 10));
+				}
+				return ActionResult.PASS;
+			}
+			return ActionResult.PASS;
+		}));
 
 		LOGGER.info("Hello Fabric world!");
 	}
