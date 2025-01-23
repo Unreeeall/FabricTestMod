@@ -1,6 +1,7 @@
 package me.unreal.testmod.item.custom;
 
 import me.unreal.testmod.component.ModDataComponentTypes;
+import me.unreal.testmod.sound.ModSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 
@@ -54,7 +55,7 @@ public class ChiselItem extends Item {
                context.getStack().damage(1, ((ServerWorld) world), ((ServerPlayerEntity) context.getPlayer()),
                        item -> Objects.requireNonNull(context.getPlayer()).sendEquipmentBreakStatus(item, EquipmentSlot.MAINHAND));
 
-               world.playSound(null, context.getBlockPos(), SoundEvents.BLOCK_GRINDSTONE_USE, SoundCategory.BLOCKS);
+               world.playSound(null, context.getBlockPos(), ModSounds.CHISEL_USE, SoundCategory.BLOCKS);
 
                context.getStack().set(ModDataComponentTypes.COORDINATES, context.getBlockPos());
             }

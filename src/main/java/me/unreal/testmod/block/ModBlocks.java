@@ -3,6 +3,7 @@ package me.unreal.testmod.block;
 import me.unreal.testmod.TestMod;
 import me.unreal.testmod.block.custom.MagicBlock;
 import me.unreal.testmod.block.custom.PinkGarnetLampBlock;
+import me.unreal.testmod.sound.ModSounds;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
@@ -68,7 +69,7 @@ public class ModBlocks {
             MagicBlock::new, AbstractBlock.Settings.create()
                     .strength(6f)
                     .requiresTool()
-                    .sounds(BlockSoundGroup.VAULT)
+                    .sounds(ModSounds.MAGIC_BLOCK_SOUNDS)
     );
 
     public static final Block PINK_GARNET_STAIRS = registerBlock("pink_garnet_stairs",
