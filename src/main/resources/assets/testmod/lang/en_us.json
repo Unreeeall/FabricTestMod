@@ -57,6 +57,14 @@
   "item.minecraft.splash_potion.effect.slimey_potion": "Slimey Splash Potion",
   "item.minecraft.lingering_potion.effect.slimey_potion": "Slimey Lingering Potion",
 
+  "item.testmod.world.title": "World",
+  "item.testmod.world.author": "NanoAttack",
+  "painting.testmod.shrimp.title": "Shrimp",
+  "painting.testmod.shrimp.author": "NanoAttack",
+  "painting.testmod.saw_them.title": "Saw Them",
+  "painting.testmod.saw_them.author": "NanoAttack",
+  "painting.testmod.hand_orb.title": "Hand Orb",
+  "painting.testmod.hand_orb.author": "Unreal",
 
 
   "tooltip.testmod.magic_block.tooltip": "§9MAGIC!!!§r",
