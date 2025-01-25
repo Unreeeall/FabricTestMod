@@ -1,11 +1,13 @@
 package me.unreal.testmod.block;
 
 import me.unreal.testmod.TestMod;
+import me.unreal.testmod.block.custom.CauliflowerCropBlock;
 import me.unreal.testmod.block.custom.MagicBlock;
 import me.unreal.testmod.block.custom.PinkGarnetLampBlock;
 import me.unreal.testmod.sound.ModSounds;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -142,6 +144,17 @@ public class ModBlocks {
 
 
 
+    public static final Block CAULIFLOWER_CROP = registerBlockWithoutItem("cauliflower_crop",
+            CropBlock::new, AbstractBlock.Settings.create()
+                    .noCollision()
+                    .ticksRandomly()
+                    .breakInstantly()
+                    .sounds(BlockSoundGroup.CROP)
+                    .pistonBehavior(PistonBehavior.DESTROY)
+                    .mapColor(MapColor.DARK_GREEN)
+    );
+
+
 
 
 
@@ -181,6 +194,13 @@ public class ModBlocks {
     /// /////////////////////////////////////////////////////////////////////
 
     //HELPER METHODS:
+
+    private static Block registerBlockWithoutItem(String name, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
+        final Identifier identifier = Identifier.of(TestMod.MOD_ID, name);
+        final RegistryKey<Block> registryKey = RegistryKey.of(RegistryKeys.BLOCK, identifier);
+        final Block block = Blocks.register(registryKey, factory, settings);
+        return block;
+    }
 
     private static Block registerBlock(String name, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
         final Identifier identifier = Identifier.of(TestMod.MOD_ID, name);

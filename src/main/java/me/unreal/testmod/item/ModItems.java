@@ -1,6 +1,7 @@
 package me.unreal.testmod.item;
 
 import me.unreal.testmod.TestMod;
+import me.unreal.testmod.block.ModBlocks;
 import me.unreal.testmod.item.custom.ChiselItem;
 import me.unreal.testmod.item.custom.HammerItem;
 import me.unreal.testmod.item.custom.ModArmorItem;
@@ -88,6 +89,10 @@ public final class ModItems {
             Item::new, new Item.Settings()
                     .jukeboxPlayable(ModSounds.BAR_BRAWL_KEY)
                     .maxCount(1));
+
+
+
+    //public static final Item CAULIFLOWER_SEEDS = registerItem("cauliflower_seeds", ))
 
     //HELPER METHODS:
     private static Item registerItem(String name, Function<Item.Settings, Item> factory, Item.Settings settings)
