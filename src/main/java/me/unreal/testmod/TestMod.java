@@ -3,6 +3,7 @@ package me.unreal.testmod;
 import me.unreal.testmod.block.ModBlocks;
 import me.unreal.testmod.component.ModDataComponentTypes;
 import me.unreal.testmod.effect.ModEffects;
+import me.unreal.testmod.enchantment.ModEnchantmentEffects;
 import me.unreal.testmod.item.ModItemGroups;
 import me.unreal.testmod.item.ModItems;
 import me.unreal.testmod.potion.ModPotions;
@@ -45,6 +46,7 @@ public class TestMod implements ModInitializer {
 		ModDataComponentTypes.registerDataComponentTypes();
 		ModEffects.registerEffects();
 		ModPotions.registerPotions();
+		ModEnchantmentEffects.registerEnchantmentEffects();
 
 		FuelRegistryEvents.BUILD.register((builder, context) ->
 				builder.add(ModItems.STARLIGHT_ASHES, 600));
