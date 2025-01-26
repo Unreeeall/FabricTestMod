@@ -37,7 +37,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.PINK_GARNET_ORE);
                         entries.add(ModBlocks.PINK_GARNET_DEEPSLATE_ORE);
                         entries.add(ModBlocks.MAGIC_BLOCK);
-                        entries.add(ModItems.CAUILIFLOWER);
+                        entries.add(ModItems.CAULIFLOWER);
                         entries.add(ModItems.BROCCOLI);
                         entries.add(ModItems.STARLIGHT_ASHES);
 
@@ -69,6 +69,9 @@ public class ModItemGroups {
                         entries.add(ModItems.PINK_GARNET_HORSE_ARMOR);
 
                         entries.add(ModItems.BAR_BRAWL_MUSIC_DISC);
+
+                        entries.add(ModItems.CAULIFLOWER_SEEDS);
+                        entries.add(ModItems.HONEY_BERRIES);
                     }).build());
 
 

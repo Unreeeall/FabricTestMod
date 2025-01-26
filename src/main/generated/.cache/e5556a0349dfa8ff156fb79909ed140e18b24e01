@@ -1,5 +1,7 @@
 // 1.21.4	-999999999-01-01T00:00:00	Test Mod/Block Loot Tables
 2bb2120e14c0944603788a2ea1ae3810ec1216d9 data/testmod/loot_table/blocks/block_of_quargermark.json
+688d4d38aa5935a3a1283a6afd9c256c3a8cd7d1 data/testmod/loot_table/blocks/cauliflower_crop.json
+630fd54cfb0b3529bee7437be546abb68dc0076c data/testmod/loot_table/blocks/honey_berry_bush.json
 ff7590126ede9ddfc81ec8871a83730bf815a1d8 data/testmod/loot_table/blocks/magic_block.json
 c461af33ca70128bddcd4c2fd9eba2a8bccfae44 data/testmod/loot_table/blocks/pink_garnet_block.json
 f8916f7fd760c25009d5399c6abe610ede1c882a data/testmod/loot_table/blocks/pink_garnet_deepslate_ore.json

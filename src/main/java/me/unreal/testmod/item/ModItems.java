@@ -7,7 +7,11 @@ import me.unreal.testmod.item.custom.HammerItem;
 import me.unreal.testmod.item.custom.ModArmorItem;
 import me.unreal.testmod.sound.ModSounds;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.component.type.FoodComponent;
+import net.minecraft.component.type.FoodComponents;
 import net.minecraft.item.*;
 import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.item.tooltip.TooltipType;
@@ -37,7 +41,7 @@ public final class ModItems {
     public static final Item RAW_PINK_GARNET = registerItem("raw_pink_garnet", Item::new, new Item.Settings());
 
     public static final Item CHISEL = registerItem("chisel", ChiselItem::new, new Item.Settings().maxDamage(32));
-    public static final Item CAUILIFLOWER = registerItem("cauliflower", Item::new, new Item.Settings().food(ModFoodComponents.CAULIFLOWER));
+    public static final Item CAULIFLOWER = registerItem("cauliflower", Item::new, new Item.Settings().food(ModFoodComponents.CAULIFLOWER));
     public static final Item BROCCOLI = registerItem("broccoli", Item::new, new Item.Settings().rarity(Rarity.EPIC).food(ModFoodComponents.BROCCOLI, ModConsumableComponents.BROCCOLI));
     public static final Item STARLIGHT_ASHES = registerItem("starlight_ashes", Item::new, new Item.Settings());
 
@@ -92,13 +96,26 @@ public final class ModItems {
 
 
 
-    //public static final Item CAULIFLOWER_SEEDS = registerItem("cauliflower_seeds", ))
+    public static final Item CAULIFLOWER_SEEDS = registerItem("cauliflower_seeds",
+            createBlockItemWithUniqueName(ModBlocks.CAULIFLOWER_CROP), new Item.Settings());
+
+
+    public static final Item HONEY_BERRIES = registerItem("honey_berries",
+            createBlockItemWithUniqueName(ModBlocks.HONEY_BERRY_BUSH),
+            new Item.Settings().food(ModFoodComponents.HONEY_BERRY));
+
+
+
 
     //HELPER METHODS:
     private static Item registerItem(String name, Function<Item.Settings, Item> factory, Item.Settings settings)
     {
         final RegistryKey<Item> registerKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TestMod.MOD_ID, name));
         return Items.register(registerKey, factory, settings);
+    }
+
+    private static Function<Item.Settings, Item> createBlockItemWithUniqueName(Block block) {
+        return (settings) -> new BlockItem(block, settings.useItemPrefixedTranslationKey());
     }
 
     public static void registerModItems(){
@@ -118,7 +135,7 @@ public final class ModItems {
             entries.add(PINK_GARNET);
             entries.add(RAW_PINK_GARNET);
             entries.add(CHISEL);
-            entries.add(CAUILIFLOWER);
+            entries.add(CAULIFLOWER);
             entries.add(BROCCOLI);
             entries.add(STARLIGHT_ASHES);
 
@@ -137,6 +154,8 @@ public final class ModItems {
             entries.add(PINK_GARNET_BOOTS);
             entries.add(PINK_GARNET_HORSE_ARMOR);
             entries.add(BAR_BRAWL_MUSIC_DISC);
+
+            entries.add(CAULIFLOWER_SEEDS);
 
 
 

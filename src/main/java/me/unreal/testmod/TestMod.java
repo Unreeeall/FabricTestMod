@@ -12,6 +12,7 @@ import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
+import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
 import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -48,11 +49,16 @@ public class TestMod implements ModInitializer {
 		ModPotions.registerPotions();
 		ModEnchantmentEffects.registerEnchantmentEffects();
 
+
+		// fuel item registration
 		FuelRegistryEvents.BUILD.register((builder, context) ->
 				builder.add(ModItems.STARLIGHT_ASHES, 600));
 
+
+		// Block break event registration
 		PlayerBlockBreakEvents.BEFORE.register(new HammerUsageEvent());
 
+		// Event registration
 		AttackEntityCallback.EVENT.register(((playerEntity, world, hand, entity, entityHitResult) ->
 		{
 			if (entity instanceof SheepEntity sheepEntity) {
@@ -65,9 +71,15 @@ public class TestMod implements ModInitializer {
 			return ActionResult.PASS;
 		}));
 
+		//Brewing Recipe
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
 			builder.registerPotionRecipe(Potions.AWKWARD, Items.SLIME_BALL, ModPotions.SLIMEY_POTION);
 		});
+
+
+		//Composting registry ( can be done in sepperate class if needed)
+		CompostingChanceRegistry.INSTANCE.add(ModItems.CAULIFLOWER, 0.5f);
+		CompostingChanceRegistry.INSTANCE.add(ModItems.CAULIFLOWER_SEEDS, 0.25f);
 
 		LOGGER.info("Hello Fabric world!");
 	}

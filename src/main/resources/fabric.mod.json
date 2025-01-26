@@ -1,11 +1,11 @@
 {
 	"schemaVersion": 1,
 	"id": "testmod",
-	"version": "${version}",
+	"version": "0.1",
 	"name": "Test Mod",
 	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [
-		"Me!"
+		"Unreal"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
@@ -15,6 +15,9 @@
 	"icon": "assets/testmod/icon.png",
 	"environment": "*",
 	"entrypoints": {
+		"client": [
+			"me.unreal.testmod.TestModClient"
+		],
 		"main": [
 			"me.unreal.testmod.TestMod"
 		],

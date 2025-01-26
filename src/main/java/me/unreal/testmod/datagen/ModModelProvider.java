@@ -2,15 +2,13 @@ package me.unreal.testmod.datagen;
 
 import me.unreal.testmod.TestMod;
 import me.unreal.testmod.block.ModBlocks;
+import me.unreal.testmod.block.custom.CauliflowerCropBlock;
+import me.unreal.testmod.block.custom.HoneyBerryBushBlock;
 import me.unreal.testmod.block.custom.PinkGarnetLampBlock;
-import me.unreal.testmod.item.ModEquipmentAssetKeys;
 import me.unreal.testmod.item.ModItems;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.client.data.*;
-import net.minecraft.client.render.entity.equipment.EquipmentModel;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.ArmorItem;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 
@@ -55,14 +53,17 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.PINK_GARNET_LAMP)
                 .coordinate(BlockStateModelGenerator.createBooleanModelMap(PinkGarnetLampBlock.CLICKED, lampOnIdentifier, lampOffIdentifier)));
 
-
+        //System.out.println(this.stateManager.getProperties());
+        blockStateModelGenerator.registerCrop(ModBlocks.CAULIFLOWER_CROP, CauliflowerCropBlock.AGE, 0, 1, 2, 3, 4, 5, 6);
+        blockStateModelGenerator.registerTintableCrossBlockStateWithStages(ModBlocks.HONEY_BERRY_BUSH, BlockStateModelGenerator.CrossType.NOT_TINTED,
+                HoneyBerryBushBlock.AGE, 0, 1, 2, 3);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.PINK_GARNET, Models.GENERATED);
         itemModelGenerator.register(ModItems.RAW_PINK_GARNET, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CAUILIFLOWER, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CAULIFLOWER, Models.GENERATED);
         itemModelGenerator.register(ModItems.CHISEL, Models.GENERATED);
         itemModelGenerator.register(ModItems.STARLIGHT_ASHES, Models.GENERATED);
         itemModelGenerator.register(ModItems.APPLE_ISO_CLEAR_POWDER, Models.GENERATED);
@@ -86,10 +87,10 @@ public class ModModelProvider extends FabricModelProvider {
 
         itemModelGenerator.register(ModItems.PINK_GARNET_HAMMER, Models.HANDHELD);
 
-        /* Own approach (I guess usefull when I want my own trim assets)
+        /* Own approach (I guess useful when I want my own trim assets)
         itemModelGenerator.registerArmor(ModItems.PINK_GARNET_HELMET, ModEquipmentAssetKeys.PINK_GARNET, "pink_garnet", false);
         itemModelGenerator.registerArmor(ModItems.PINK_GARNET_CHESTPLATE, ModEquipmentAssetKeys.PINK_GARNET, "pink_garnet", false);
-        itemModelGenerator.registerArmor(ModItems.PINK_GARNET_LEGGINS, ModEquipmentAssetKeys.PINK_GARNET, "pink_garnet", false);
+        itemModelGenerator.registerArmor(ModItems.PINK_GARNET_LEGGINGS, ModEquipmentAssetKeys.PINK_GARNET, "pink_garnet", false);
         itemModelGenerator.registerArmor(ModItems.PINK_GARNET_BOOTS, ModEquipmentAssetKeys.PINK_GARNET, "pink_garnet", false);
 
          */

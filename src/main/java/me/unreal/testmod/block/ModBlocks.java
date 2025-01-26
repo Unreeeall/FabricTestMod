@@ -2,6 +2,7 @@ package me.unreal.testmod.block;
 
 import me.unreal.testmod.TestMod;
 import me.unreal.testmod.block.custom.CauliflowerCropBlock;
+import me.unreal.testmod.block.custom.HoneyBerryBushBlock;
 import me.unreal.testmod.block.custom.MagicBlock;
 import me.unreal.testmod.block.custom.PinkGarnetLampBlock;
 import me.unreal.testmod.sound.ModSounds;
@@ -145,7 +146,7 @@ public class ModBlocks {
 
 
     public static final Block CAULIFLOWER_CROP = registerBlockWithoutItem("cauliflower_crop",
-            CropBlock::new, AbstractBlock.Settings.create()
+            CauliflowerCropBlock::new, AbstractBlock.Settings.create()
                     .noCollision()
                     .ticksRandomly()
                     .breakInstantly()
@@ -154,6 +155,9 @@ public class ModBlocks {
                     .mapColor(MapColor.DARK_GREEN)
     );
 
+
+    public static final Block HONEY_BERRY_BUSH = registerBlockWithoutItem("honey_berry_bush",
+            HoneyBerryBushBlock::new, AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH));
 
 
 

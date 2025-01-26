@@ -69,6 +69,13 @@
 
   "enchantment.testmod.lightning_striker": "Lightning Striker",
 
+
+  "block.testmod.cauliflower_crop": "Cauliflower Crop",
+  "item.testmod.cauliflower_seeds": "Cauliflower Seeds",
+
+  "block.testmod.honey_berry_bush": "Honey Berry Bush",
+  "item.testmod.honey_berries": "Honey Berries",
+
   "tooltip.testmod.magic_block.tooltip": "§9MAGIC!!!§r",
   "tooltip.testmod.chisel.shift_down": "LEGG EIER :)",
   "tooltip.testmod.chisel": "Press §eShift§r for more Information!",

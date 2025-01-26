@@ -1,5 +1,7 @@
 package me.unreal.testmod.block.custom;
 
+import me.unreal.testmod.block.ModBlocks;
+import me.unreal.testmod.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CropBlock;
@@ -12,14 +14,14 @@ public class CauliflowerCropBlock extends CropBlock {
     public static final int MAX_AGE = 6;
     public static final IntProperty AGE = IntProperty.of("age", 0, 6);
 
-
     public CauliflowerCropBlock(Settings settings) {
         super(settings);
+        this.setDefaultState(this.getStateManager().getDefaultState().with(AGE, 0));
     }
 
     @Override
     protected ItemConvertible getSeedsItem() {
-        return super.getSeedsItem();
+        return ModItems.CAULIFLOWER_SEEDS;
     }
 
     @Override

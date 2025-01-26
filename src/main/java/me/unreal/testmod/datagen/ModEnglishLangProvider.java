@@ -36,7 +36,7 @@ public class ModEnglishLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.BROCCOLI, "Broccoli");
         translationBuilder.add(ModItems.CHISEL, "Chisel");
         translationBuilder.add(ModItems.APPLE_ISO_CLEAR_POWDER, "Apple ISO Clear Powder");
-        translationBuilder.add(ModItems.CAUILIFLOWER, "Cauliflower");
+        translationBuilder.add(ModItems.CAULIFLOWER, "Cauliflower");
         translationBuilder.add(ModItems.CHOCOLATE_WHEY_PROTEIN_POWDER, "Chocolate Whey Protein Powder");
         translationBuilder.add(ModItems.ISO_CLEAR_POWDER, "ISO Clear Powder");
         translationBuilder.add(ModItems.PINK_GARNET, "Pink Garnet");
