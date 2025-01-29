@@ -1,6 +1,6 @@
 package me.unreal.testmod.block.custom;
 
-import me.unreal.testmod.block.ModBlocks;
+
 import me.unreal.testmod.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

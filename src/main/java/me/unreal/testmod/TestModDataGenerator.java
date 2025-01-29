@@ -2,6 +2,8 @@ package me.unreal.testmod;
 
 import me.unreal.testmod.datagen.*;
 import me.unreal.testmod.enchantment.ModEnchantments;
+import me.unreal.testmod.world.ModConfiguredFeatures;
+import me.unreal.testmod.world.ModPlacedFeatures;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.registry.RegistryBuilder;
@@ -26,5 +28,8 @@ public class TestModDataGenerator implements DataGeneratorEntrypoint {
 	public void buildRegistry(RegistryBuilder registryBuilder) {
 		//DataGeneratorEntrypoint.super.buildRegistry(registryBuilder);
 		registryBuilder.addRegistry(RegistryKeys.ENCHANTMENT, ModEnchantments::bootstrap);
+
+		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
 	}
 }

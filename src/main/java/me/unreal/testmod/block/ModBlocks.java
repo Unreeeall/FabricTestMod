@@ -202,8 +202,7 @@ public class ModBlocks {
     private static Block registerBlockWithoutItem(String name, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
         final Identifier identifier = Identifier.of(TestMod.MOD_ID, name);
         final RegistryKey<Block> registryKey = RegistryKey.of(RegistryKeys.BLOCK, identifier);
-        final Block block = Blocks.register(registryKey, factory, settings);
-        return block;
+        return Blocks.register(registryKey, factory, settings);
     }
 
     private static Block registerBlock(String name, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
