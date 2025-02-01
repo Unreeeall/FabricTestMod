@@ -1,7 +1,9 @@
 // 1.21.4	-999999999-01-01T00:00:00	Test Mod/Tags for minecraft:item
 afbe031bbbbd519cc3a49302f3a7b047c170f709 data/minecraft/tags/item/axes.json
 729ebed2ee5f6d6bc837c4d18db208f3c29e2bfe data/minecraft/tags/item/hoes.json
+053b0a99ccaccff67363512d5aaf9ca28671372c data/minecraft/tags/item/logs_that_burn.json
 7e5fc996955b30107396fe8580c920ef90ff325f data/minecraft/tags/item/pickaxes.json
+934616c7c59bbff29df00be26e669115a15d0a51 data/minecraft/tags/item/planks.json
 e12091ebcdbdb3227cc122435af9ac0843f27be7 data/minecraft/tags/item/shovels.json
 e8b64063c93589526a9b3ce28137fb62bddac627 data/minecraft/tags/item/swords.json
 237dfd5747d88a238541897617bbeabff58716ec data/minecraft/tags/item/trimmable_armor.json

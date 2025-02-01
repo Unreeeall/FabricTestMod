@@ -1,5 +1,6 @@
 // 1.21.4	-999999999-01-01T00:00:00	Test Mod/
 adf7f3293668b556eb1ffd63479485b13510eb69 data/testmod/enchantment/lightning_striker.json
+300c02e5db31f9cf634de59c5d66abbb4aab97ac data/testmod/worldgen/configured_feature/driftwood.json
 87b8300835dbd7e0b6895d608585409ccdfac3b4 data/testmod/worldgen/configured_feature/end_pink_garnet_ore.json
 98bf32388c0ab577ac386df74eb4e6c233778797 data/testmod/worldgen/configured_feature/nether_pink_garnet_ore.json
 1be345ce4612d8a58de9629713ee45a8e889ca54 data/testmod/worldgen/configured_feature/pink_garnet_ore.json

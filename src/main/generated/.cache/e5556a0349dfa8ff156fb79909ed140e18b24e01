@@ -1,6 +1,11 @@
 // 1.21.4	-999999999-01-01T00:00:00	Test Mod/Block Loot Tables
 2bb2120e14c0944603788a2ea1ae3810ec1216d9 data/testmod/loot_table/blocks/block_of_quargermark.json
 688d4d38aa5935a3a1283a6afd9c256c3a8cd7d1 data/testmod/loot_table/blocks/cauliflower_crop.json
+f4bc3be37797a372424d24ea8425463ed2de9830 data/testmod/loot_table/blocks/driftwood_leaves.json
+9afc844b13c0b2e53cca5ee3b1ac99bbbd983790 data/testmod/loot_table/blocks/driftwood_log.json
+ff410419df1489cbbbc0cb07af7f68ee0bd6ba1f data/testmod/loot_table/blocks/driftwood_planks.json
+410ad9e57693b4e300d9457391932bd2eb050038 data/testmod/loot_table/blocks/driftwood_sapling.json
+8693bcf03bd4de807c00e51e62f0bcce6fe2f772 data/testmod/loot_table/blocks/driftwood_wood.json
 630fd54cfb0b3529bee7437be546abb68dc0076c data/testmod/loot_table/blocks/honey_berry_bush.json
 ff7590126ede9ddfc81ec8871a83730bf815a1d8 data/testmod/loot_table/blocks/magic_block.json
 c461af33ca70128bddcd4c2fd9eba2a8bccfae44 data/testmod/loot_table/blocks/pink_garnet_block.json
@@ -10,3 +15,5 @@ e16584000a6183bd3cbf3e5db3533b2738448691 data/testmod/loot_table/blocks/pink_gar
 668fc3c08b71d2b115de1c6861393552b07fe3bd data/testmod/loot_table/blocks/pink_garnet_ore.json
 93c3d2ecc0f910fc66e686221ad436fc874ccf4e data/testmod/loot_table/blocks/protein_powder_block.json
 81f7ef8e00f00da9e179bf5375dd278a2007e772 data/testmod/loot_table/blocks/raw_pink_garnet_block.json
+aed32d50cd44a8e14b51849d434bc4dd7f903903 data/testmod/loot_table/blocks/stripped_driftwood_log.json
+555ac585473dd675db59d2e26ab7c266201c79ce data/testmod/loot_table/blocks/stripped_driftwood_wood.json

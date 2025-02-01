@@ -1,6 +1,7 @@
 // 1.21.4	-999999999-01-01T00:00:00	Test Mod/Tags for minecraft:block
 3f9a3eb5f119077fd00c71f779ff7a23d6601576 data/minecraft/tags/block/fence_gates.json
 382d3918c24c0efda33ae0bfe1b796e63d5be382 data/minecraft/tags/block/fences.json
+053b0a99ccaccff67363512d5aaf9ca28671372c data/minecraft/tags/block/logs_that_burn.json
 8c35762f9af6042055ab3659afd2faa4a34985ef data/minecraft/tags/block/mineable/pickaxe.json
 ec939702baba19c8a13c629218fa1e489f9a37a5 data/minecraft/tags/block/needs_diamond_tool.json
 775cb519edc6e854ca39f48f38313cfc4532ce9e data/minecraft/tags/block/needs_iron_tool.json

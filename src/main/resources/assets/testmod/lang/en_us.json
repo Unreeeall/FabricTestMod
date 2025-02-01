@@ -78,6 +78,14 @@
   "block.testmod.honey_berry_bush": "Honey Berry Bush",
   "item.testmod.honey_berries": "Honey Berries",
 
+  "item.testmod.driftwood_log": "Driftwood Log",
+  "item.testmod.driftwood_wood": "Driftwood Wood",
+  "item.testmod.stripped_driftwood_log": "Stripped Driftwood Log",
+  "item.testmod.stripped_driftwood_wood": "Stripped Driftwood Wood",
+  "item.testmod.driftwood_planks": "Driftwood Planks",
+  "item.testmod.driftwood_leaves": "Driftwood Leaves",
+  "item.testmod.driftwood_sapling": "Driftwood Sapling",
+
   "tooltip.testmod.magic_block.tooltip": "§9MAGIC!!!§r",
   "tooltip.testmod.chisel.shift_down": "LEGG EIER :)",
   "tooltip.testmod.chisel": "Press §eShift§r for more Information!",

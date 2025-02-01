@@ -6,6 +6,7 @@ import me.unreal.testmod.block.custom.HoneyBerryBushBlock;
 import me.unreal.testmod.block.custom.MagicBlock;
 import me.unreal.testmod.block.custom.PinkGarnetLampBlock;
 import me.unreal.testmod.sound.ModSounds;
+import me.unreal.testmod.world.tree.ModSaplingGenerators;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
@@ -172,6 +173,30 @@ public class ModBlocks {
             HoneyBerryBushBlock::new, AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH));
 
 
+    public static final Block DRIFTWOOD_LOG = registerBlock("driftwood_log",
+            PillarBlock::new, AbstractBlock.Settings.copy(Blocks.OAK_LOG)
+    );
+    public static final Block DRIFTWOOD_WOOD = registerBlock("driftwood_wood",
+            PillarBlock::new, AbstractBlock.Settings.copy(Blocks.OAK_WOOD)
+    );
+    public static final Block STRIPPED_DRIFTWOOD_LOG = registerBlock("stripped_driftwood_log",
+            PillarBlock::new, AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_LOG)
+    );
+    public static final Block STRIPPED_DRIFTWOOD_WOOD = registerBlock("stripped_driftwood_wood",
+            PillarBlock::new, AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD)
+    );
+
+    public static final Block DRIFTWOOD_PLANKS = registerBlock("driftwood_planks",
+            Block::new, AbstractBlock.Settings.copy(Blocks.OAK_PLANKS)
+    );
+    public static final Block DRIFTWOOD_LEAVES = registerBlock("driftwood_leaves",
+            LeavesBlock::new, AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
+    );
+
+    public static final Block DRIFTWOOD_SAPLING = registerBlock("driftwood_sapling",
+            settings -> new SaplingBlock(ModSaplingGenerators.DRIFTWOOD, settings),
+            AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)
+    );
 
 
 
