@@ -8,6 +8,7 @@ import me.unreal.testmod.item.ModItemGroups;
 import me.unreal.testmod.item.ModItems;
 import me.unreal.testmod.potion.ModPotions;
 import me.unreal.testmod.util.HammerUsageEvent;
+import me.unreal.testmod.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
@@ -47,6 +48,7 @@ public class TestMod implements ModInitializer {
 		ModEffects.registerEffects();
 		ModPotions.registerPotions();
 		ModEnchantmentEffects.registerEnchantmentEffects();
+		ModWorldGeneration.generateModWorldGen();
 
 
 		// fuel item registration
