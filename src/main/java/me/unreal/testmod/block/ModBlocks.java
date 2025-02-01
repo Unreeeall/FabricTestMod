@@ -1,10 +1,7 @@
 package me.unreal.testmod.block;
 
 import me.unreal.testmod.TestMod;
-import me.unreal.testmod.block.custom.CauliflowerCropBlock;
-import me.unreal.testmod.block.custom.HoneyBerryBushBlock;
-import me.unreal.testmod.block.custom.MagicBlock;
-import me.unreal.testmod.block.custom.PinkGarnetLampBlock;
+import me.unreal.testmod.block.custom.*;
 import me.unreal.testmod.sound.ModSounds;
 import me.unreal.testmod.world.tree.ModSaplingGenerators;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -194,7 +191,7 @@ public class ModBlocks {
     );
 
     public static final Block DRIFTWOOD_SAPLING = registerBlock("driftwood_sapling",
-            settings -> new SaplingBlock(ModSaplingGenerators.DRIFTWOOD, settings),
+            settings -> new ModSaplingBlock(ModSaplingGenerators.DRIFTWOOD, settings, Blocks.SNOW_BLOCK),
             AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)
     );
 
