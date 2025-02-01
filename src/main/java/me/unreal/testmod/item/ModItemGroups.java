@@ -72,6 +72,9 @@ public class ModItemGroups {
 
                         entries.add(ModItems.CAULIFLOWER_SEEDS);
                         entries.add(ModItems.HONEY_BERRIES);
+
+                        entries.add(ModBlocks.PINK_GARNET_NETHER_ORE);
+                        entries.add(ModBlocks.PINK_GARNET_END_ORE);
                     }).build());
 
 

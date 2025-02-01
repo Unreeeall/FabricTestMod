@@ -68,6 +68,18 @@ public class ModBlocks {
                     .sounds(BlockSoundGroup.DEEPSLATE)
     );
 
+    public static final Block PINK_GARNET_END_ORE = registerBlock("pink_garnet_end_ore",
+            Block::new, AbstractBlock.Settings.create()
+                    .strength(3f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.STONE));
+
+    public static final Block PINK_GARNET_NETHER_ORE = registerBlock("pink_garnet_nether_ore",
+            Block::new, AbstractBlock.Settings.create()
+                    .strength(3f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.NETHER_ORE));
+
     public static final Block MAGIC_BLOCK = registerBlock("magic_block",
             MagicBlock::new, AbstractBlock.Settings.create()
                     .strength(6f)
@@ -249,6 +261,8 @@ public class ModBlocks {
 
             entries.add(ModBlocks.PINK_GARNET_LAMP);
 
+            entries.add(ModBlocks.PINK_GARNET_NETHER_ORE);
+            entries.add(ModBlocks.PINK_GARNET_END_ORE);
 
         });
     }
